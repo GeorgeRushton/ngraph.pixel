@@ -370,7 +370,7 @@ function pixel(graph, options) {
     input.on('nodeclick', passthrough('nodeclick'));
     input.on('nodedblclick', passthrough('nodedblclick'));
 
-    controls = new OrbitControls( camera, renderer.domElement );
+    controls = new THREE.OrbitControls( camera, renderer.domElement );
 
     window.addEventListener('resize', onWindowResize, false);
   }
