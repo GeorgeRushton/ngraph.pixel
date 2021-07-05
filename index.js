@@ -1,5 +1,5 @@
 var THREE = require('three');
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+var OrbitControls = require('three/examples/jsm/controls/OrbitControls');
 
 module.exports = pixel;
 
