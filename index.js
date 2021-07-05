@@ -215,7 +215,7 @@ function pixel(graph, options) {
   }
 
   function run() {
-    console.log('started run function')
+    //console.log('started run function')
     requestAnimationFrame(run);
 
     if (beforeFrameCallback) {
@@ -292,7 +292,11 @@ function pixel(graph, options) {
     if (input) input.reset();
 
     function addNodePosition(node) {
-    //  console.log('in addNodePosition')
+      console.log('in addNodePosition')
+
+      console.log(node)
+      console.log('nodes pre- add node')
+      console.log(nodes)
       var nodeModel = options.node(node);
       if (!nodeModel) return;
       var idx = nodes.length;
@@ -309,7 +313,8 @@ function pixel(graph, options) {
       } else {
         nodes.push(nodeModel);
       }
-
+      console.log('nodes -post add node')
+      console.log(nodes)
       nodeIdToIdx.set(node.id, idx);
     }
 
