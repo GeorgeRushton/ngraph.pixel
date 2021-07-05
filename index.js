@@ -215,6 +215,7 @@ function pixel(graph, options) {
   }
 
   function run() {
+    console.log('started run function')
     requestAnimationFrame(run);
 
     if (beforeFrameCallback) {
@@ -256,10 +257,12 @@ function pixel(graph, options) {
   function init() {
     initScene();
     initPositions();
+    console.log('init function - about to listen to graph')
     listenToGraph();
   }
 
   function listenToGraph() {
+    console.log('in listenToGraph')
     // TODO: this is not efficient at all. We are recreating view from scratch on
     // every single change.
     graph.on('changed', initPositions);
@@ -275,6 +278,7 @@ function pixel(graph, options) {
   }
 
   function initPositions() {
+    console.log('in initPositions')
     edges = [];
     nodes = [];
     nodeIdToIdx = new Map();
@@ -288,6 +292,7 @@ function pixel(graph, options) {
     if (input) input.reset();
 
     function addNodePosition(node) {
+      console.log('in addNodePosition')
       var nodeModel = options.node(node);
       if (!nodeModel) return;
       var idx = nodes.length;
@@ -309,6 +314,7 @@ function pixel(graph, options) {
     }
 
     function addEdgePosition(edge) {
+      console.log('in addEdgePosition')
       var edgeModel = options.link(edge);
       if (!edgeModel) return;
 
@@ -333,6 +339,7 @@ function pixel(graph, options) {
   }
 
   function initScene() {
+    console.log('init scene')
     scene = new THREE.Scene();
     scene.sortObjects = false;
 
@@ -444,6 +451,10 @@ function pixel(graph, options) {
   }
 
   function graphInternal(newGraph) {
+    console.log('graphInternal function: newgraph:')
+    console.log(newGraph)
+    console.log('graphInternal function: graph:')
+    console.log(graph)
     if (newGraph !== undefined) throw new Error('Not implemented, Anvaka, do it!');
     return graph;
   }
