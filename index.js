@@ -1,5 +1,4 @@
 var THREE = require('three');
-var OrbitControls = import("three/examples/js/controls/OrbitControls.js");
 
 module.exports = pixel;
 
@@ -8,6 +7,9 @@ module.exports = pixel;
  * so that they can use it if they need it
  */
 module.exports.THREE = THREE;
+
+
+var OrbitControls = require('three-orbit-controls')(THREE)
 
 var eventify = require('ngraph.events');
 
