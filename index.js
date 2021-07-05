@@ -292,7 +292,7 @@ function pixel(graph, options) {
     if (input) input.reset();
 
     function addNodePosition(node) {
-      console.log('in addNodePosition')
+    //  console.log('in addNodePosition')
       var nodeModel = options.node(node);
       if (!nodeModel) return;
       var idx = nodes.length;
@@ -314,7 +314,7 @@ function pixel(graph, options) {
     }
 
     function addEdgePosition(edge) {
-      console.log('in addEdgePosition')
+    //  console.log('in addEdgePosition')
       var edgeModel = options.link(edge);
       if (!edgeModel) return;
 
