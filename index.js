@@ -1,5 +1,5 @@
 var THREE = require('three');
-var OrbitControls = import("three/examples/jsm/controls/OrbitControls");
+var OrbitControls = import("three/examples/js/controls/OrbitControls.js");
 
 module.exports = pixel;
 
@@ -371,7 +371,7 @@ function pixel(graph, options) {
     input.on('nodeclick', passthrough('nodeclick'));
     input.on('nodedblclick', passthrough('nodedblclick'));
 
-    controls = new OrbitControls( camera, renderer.domElement );
+    controls = new THREE.OrbitControls( camera, renderer.domElement );
 
     window.addEventListener('resize', onWindowResize, false);
   }
