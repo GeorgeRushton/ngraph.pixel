@@ -68,7 +68,7 @@ function validateOptions(options) {
 }
 
 function defaultNode(/* node */) {
-  return { size: 20, color: 0xFF0894 };
+  return { size: 500, color: 0xFF0894 };
 }
 
 function defaultLink(/* link */) {
