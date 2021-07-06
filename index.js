@@ -239,7 +239,7 @@ function pixel(graph, options) {
     if (isStable) api.fire('stable', true);
 
     controls.update();
-
+    
     input.update();
 
     if (autoFitController) {
@@ -275,7 +275,6 @@ function pixel(graph, options) {
     for (var i = 0; i < nodes.length; ++i) {
       var node = nodes[i];
       node.position = layout.getNodePosition(node.id);
-
     }
   }
 
@@ -297,9 +296,7 @@ function pixel(graph, options) {
       if (!nodeModel) return;
       var idx = nodes.length;
 
-
       var position = layout.getNodePosition(node.id);
-
       if (typeof position.z !== 'number') position.z = 0;
 
       nodeModel.id = node.id;
