@@ -274,7 +274,6 @@ function pixel(graph, options) {
 
     for (var i = 0; i < nodes.length; ++i) {
       var node = nodes[i];
-      layout.pinNode(node, true);
       node.position = layout.getNodePosition(node.id);
 
     }
@@ -289,9 +288,7 @@ function pixel(graph, options) {
     graph.forEachLink(addEdgePosition);
 
     nodeView.init(nodes);
-    edgeView.init(edges);for (var i = 0; i < array.length; i++) {
-      array[i]
-    }
+    edgeView.init(edges);
 
     if (input) input.reset();
 
@@ -300,7 +297,9 @@ function pixel(graph, options) {
       if (!nodeModel) return;
       var idx = nodes.length;
 
+
       var position = layout.getNodePosition(node.id);
+
       if (typeof position.z !== 'number') position.z = 0;
 
       nodeModel.id = node.id;
