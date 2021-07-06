@@ -8,6 +8,8 @@ module.exports = pixel;
  */
 module.exports.THREE = THREE;
 
+var OrbitControls = require('three-orbit-controls')(THREE)
+
 var eventify = require('ngraph.events');
 
 var createNodeView = require('./lib/nodeView.js');
@@ -236,6 +238,8 @@ function pixel(graph, options) {
 
     if (isStable) api.fire('stable', true);
 
+    controls.update();
+    
     input.update();
 
     if (autoFitController) {
@@ -366,6 +370,8 @@ function pixel(graph, options) {
     input.on('nodeover', setTooltip);
     input.on('nodeclick', passthrough('nodeclick'));
     input.on('nodedblclick', passthrough('nodedblclick'));
+
+    controls = new OrbitControls( camera, renderer.domElement );
 
     window.addEventListener('resize', onWindowResize, false);
   }
